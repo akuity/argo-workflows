@@ -40,7 +40,7 @@
         "swagger-ui-react": "^4.7.0"
     },
     "devDependencies": {
-        "@babel/core": "^7.0.0-0",
+        "@babel/core": "^7.18.0",
         "@babel/preset-env": "^7.17.12",
         "@fortawesome/fontawesome-free": "^5.15.3",
         "@types/chart.js": "^2.9.24",
