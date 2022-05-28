@@ -37,7 +37,7 @@
         "react-router-dom": "^6.3.0",
         "superagent": "^3.8.2",
         "superagent-promise": "^1.1.0",
-        "swagger-ui-react": "^4.7.0"
+        "swagger-ui-react": "^4.11.1"
     },
     "devDependencies": {
         "@babel/core": "^7.18.2",
@@ -58,7 +58,7 @@
         "@types/react-helmet": "^6.1.0",
         "@types/react-router-dom": "^5.3.3",
         "@types/superagent": "^3.5.7",
-        "@types/swagger-ui-react": "^3.23.2",
+        "@types/swagger-ui-react": "^4.11.0",
         "babel-jest": "^28.1.0",
         "babel-loader": "^8.2.5",
         "copy-webpack-plugin": "^5.1.2",
