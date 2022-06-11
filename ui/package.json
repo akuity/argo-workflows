@@ -59,7 +59,7 @@
         "@types/react-router-dom": "^5.3.3",
         "@types/superagent": "^3.5.7",
         "@types/swagger-ui-react": "^4.11.0",
-        "babel-jest": "^28.1.0",
+        "babel-jest": "^28.1.1",
         "babel-loader": "^8.2.5",
         "copy-webpack-plugin": "^6.4.1",
         "copyfiles": "^2.4.1",
