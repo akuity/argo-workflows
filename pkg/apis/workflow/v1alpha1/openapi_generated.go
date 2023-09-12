@@ -1194,6 +1194,13 @@ func schema_pkg_apis_workflow_v1alpha1_ArtifactoryArtifactRepository(ref common.
 							Format:      "",
 						},
 					},
+					"keyFormat": {
+						SchemaProps: spec.SchemaProps{
+							Description: "KeyFormat defines the format of how to store keys and can reference workflow variables.",
+							Type:        []string{"string"},
+							Format:      "",
+						},
+					},
 				},
 			},
 		},
@@ -2581,7 +2588,7 @@ func schema_pkg_apis_workflow_v1alpha1_GCSArtifactRepository(ref common.Referenc
 					},
 					"keyFormat": {
 						SchemaProps: spec.SchemaProps{
-							Description: "KeyFormat is defines the format of how to store keys. Can reference workflow variables",
+							Description: "KeyFormat defines the format of how to store keys and can reference workflow variables.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -4364,7 +4371,7 @@ func schema_pkg_apis_workflow_v1alpha1_OSSArtifactRepository(ref common.Referenc
 					},
 					"keyFormat": {
 						SchemaProps: spec.SchemaProps{
-							Description: "KeyFormat is defines the format of how to store keys. Can reference workflow variables",
+							Description: "KeyFormat defines the format of how to store keys and can reference workflow variables.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -5079,7 +5086,7 @@ func schema_pkg_apis_workflow_v1alpha1_S3ArtifactRepository(ref common.Reference
 					},
 					"keyFormat": {
 						SchemaProps: spec.SchemaProps{
-							Description: "KeyFormat is defines the format of how to store keys. Can reference workflow variables",
+							Description: "KeyFormat defines the format of how to store keys and can reference workflow variables.",
 							Type:        []string{"string"},
 							Format:      "",
 						},
