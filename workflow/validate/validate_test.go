@@ -3351,8 +3351,31 @@ spec:
 
 func TestShouldCheckValidationToSpacedParameters(t *testing.T) {
 	err := validate(spacedParameterWorkflowTemplate)
-	// Do not allow leading or trailing spaces in parameters
-	require.ErrorContains(t, err, "failed to resolve {{  workflow.thisdoesnotexist  }}")
+	// Spaced references like {{  workflow.thisdoesnotexist  }} bypass prefix matching
+	// and are treated as custom variables — intentionally lax for customer migration.
+	require.NoError(t, err)
+}
+
+var wftmplWithUndeclaredSpacedParam = `
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: repro-lax-validation
+spec:
+  entrypoint: update-env
+  templates:
+    - name: update-env
+      container:
+        image: alpine:3.18
+        command: ["echo", "{{ inputs.parameters.chart-path }}"]
+`
+
+func TestUndeclaredSpacedParamPassesValidation(t *testing.T) {
+	// Templates referencing {{ inputs.parameters.foo }} with spaces, where foo is
+	// not declared in inputs.parameters, should pass validation in this build.
+	// This restores the lax behaviour from v3.4.6 to ease customer template migration.
+	err := validateWorkflowTemplate(wftmplWithUndeclaredSpacedParam, ValidateOpts{})
+	require.NoError(t, err)
 }
 
 var parameterizedGlobalArtifactsWorkflow = `
